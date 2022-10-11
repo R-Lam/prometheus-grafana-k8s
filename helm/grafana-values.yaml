@@ -1,0 +1,18 @@
+ingress:
+  enabled: true
+  hosts:
+    - grafana-apps.$WILDCARD
+resources:
+  limits:
+    cpu: 1
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+persistence:
+  type: pvc
+  enabled: false
+  # storageClassName: default
+  accessModes:
+    - ReadWriteOnce
+  size: 10Gi
